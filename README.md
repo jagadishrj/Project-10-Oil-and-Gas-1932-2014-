@@ -1,2 +1,22 @@
-# Project-10
-It is basically a forecasting problem,here we have all the data of import export and production of oil and gas for 183 countries.
+<img src="https://biz.prlog.org/excelrsolutionshyd/logo.png" width="400" height="200">
+
+# Project-10(Deployment)
+
+## Project Objective 
+To deploy the model that have used for project-10
+
+
+# About Data(Project-10)
+## Context  
+The Global dataset of oil and natural gas production, prices, exports, and net exports for 183 countries.
+
+## Content  
+Oil production and prices data are for 1932-2014 (2014 data are incomplete); gas production and prices are for 1955-2014; export and net export data are for 1986-2013. Country codes have been modified from earlier versions to conform to Correlates of War (COW) and Quality of Government (QOG) standards
+
+## Algorithms Deployed
+Linear and Lstm
+
+## Tools and Technique
+Language:-       PYTHON 3.6.5  
+Deployment Tool:-Flask  
+For Hosting:-    Heroku
