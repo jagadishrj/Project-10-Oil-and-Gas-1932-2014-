@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <style>
+    body{
+      background-color: skyblue;
+    }
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 70px;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    /* Control the left side */
+    .left {
+      left: 0;
+      background-color: rgb(113, 194, 241);
+    }
+
+    /* Control the right side */
+    .right {
+      right: 0;
+      background-color: rgb(230, 137, 230);
+    }
+
+    /* If you want the content centered horizontally and vertically */
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    /* Style the image inside the centered container, if needed */
+    /* .centered img {
+      width: 150px;
+      border-radius: 50%;
+    } */
+  </style>
+  <title>Showcase</title>
+</head>
+
+<body>
+  <div style=" display: block; width: 900px; margin: 0px auto;  top: 50px; ">
+    <form style="display: block; margin: 0px auto; padding: 10px; " action="/showcase" method="POST">
+        <select style="padding: 10px; border-radius: 20px" name="model" id="selections">
+          <option  value="LINEAR">LINEAR</option>
+          <option value="LSTM">LSTM</option>
+        </select>
+        Train Size (0-1): <input style="padding: 10px; border-radius: 20px" type="text" name="trainr" value="{{ request.form['trainr'] }}">
+        <select style="padding: 10px; border-radius: 20px" name="city" id="city">
+          {% for i in cnam %}
+          <option value="{{i}}">{{i}}</option>
+          {% endfor %}
+        </select>
+
+      <button style="padding: 9px; border-radius: 20px;" type="submit">SUBMIT</button>
+    </form>
+  </div>
+
+  <div class="split left">
+    <div class="left" style="width: 70%;margin: 20px auto;  ">
+      <h3 >Train RMSE Value is : <span style="border-radius: 20px; background-color: azure; padding: 0px 6px;">{{out[0]}}</span></h3>
+      <!-- <h3>{{out[1]}}</h3> -->
+      {{train}}
+
+    </div>
+    <div class="centered">
+      <!--aman plot here -->
+      {{trp}}
+      <h2>Train Data</h2>
+      <p>In the memory of </p>
+    </div>
+  </div>
+
+  <div class="split right">
+    <div class="left" style="width: 70%;margin: 20px auto; background-color:rgb(230, 137, 230) ; ">
+      <h3 >Train RMSE Value is : <span style="border-radius: 20px; background-color: azure; padding: 0px 6px;">{{out[1]}}</span></h3>
+      <!-- <h3>{{out[4]}}</h3> -->
+      {{test}}
+    </div>
+    <div class="centered">
+      
+      {{tsp}}
+      <h2>Test Data</h2>
+      <p>My Grand Mother</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

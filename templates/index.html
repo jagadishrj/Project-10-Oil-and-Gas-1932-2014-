@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LSTM Predict</title>
+
+
+    <style>
+        body {
+            background-color: skyblue;
+        }
+
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 70px;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+            background-color: rgb(113, 194, 241);
+        }
+
+        /* Control the right side */
+        .right {
+            right: 0;
+            background-color: rgb(230, 137, 230);
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container {
+            
+            /* right: 900px; */
+            background-color: aquamarine;
+            /* top: 70px; */
+            width: 70%;
+            border-radius: 20px;
+            /* padding: 30px; */
+            display: block;
+            margin: auto;
+            align-items: center;
+        }
+
+        .container input {
+            border-radius: 10px;
+            border: 2px solid gray;
+            margin: 10px auto;
+            padding: 0px 5px;
+        }
+
+        label {
+            width: 240px;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .container button {
+            border-radius: 10px;
+            text-transform: uppercase;
+            margin: 0px 10px;
+        }
+
+        .container2 {
+            position: fixed;
+            top: 10px;
+            left: 600px;
+            background-color: rgb(193, 112, 240);
+            top: 70px;
+            width: 33%;
+            border-radius: 20px;
+            padding: 30px;
+            display: block;
+            margin: 10px 30px;
+            align-items: center;
+        }
+
+        .container2 input {
+            border-radius: 10px;
+            border: 2px solid gray;
+            margin: 10px auto;
+            padding: 0px 5px;
+        }
+
+        .container2 button {
+            border-radius: 10px;
+            text-transform: uppercase;
+            margin: 0px 10px;
+        }
+
+
+        /* Style the image inside the centered container, if needed */
+        /* .centered img {
+          width: 150px;
+          border-radius: 50%;
+        } */
+    </style>
+
+
+</head>
+
+<body>
+
+    <div style="  display: block; margin: auto; width: 70%; top: 50px;">
+        <a href="/" style="text-decoration: none;">
+            <h2 style="text-align: center;border-radius: 20px; background-color:purple; color: white; text-transform: none; ">Project 10</h2>
+        </a>
+    </div>
+
+    <div class="split left">
+        <div class="left" style="width: 70%;margin: auto;  ">
+            <h3 style="text-align: center;">Fill it for Present Price</h3>
+
+        </div>
+        <div class="centered container">
+            <h3 style="text-align: center;">Fill it for Present Price</h3>
+            <form action="/lstm" method="POST">
+                <label for="inp1">oil_value_2014</label>
+                <input type="text" name=var1 id="inp1" value="{{ request.form['var1'] }}">
+                <label for="inp2">gas_value_nom</label>
+                <input type="text" name=var2 id="inp2" value="{{ request.form['var2'] }}">
+                <label for="inp3">oil_price_nom</label>
+                <input type="text" name=var3 id="inp3" value="{{ request.form['var3'] }}">
+                <label for="inp4">oil_gas_value_2014</label>
+                <input type="text" name=var4 id="inp4" value="{{ request.form['var4'] }}">
+                <label for="inp5">oil_value_nom</label>
+                <input type="text" name=var5 id="inp5" value="{{ request.form['var5'] }}">
+                <label for="inp6">gas_prod55_14</label>
+                <input type="text" name=var6 id="inp6" value="{{ request.form['var6'] }}">
+                <label for="inp7">gas_value_2014</label>
+                <input type="text" name=var7 id="inp7" value="{{ request.form['var7'] }}">
+                <label for="inp8">mult_nom_2014</label>
+                <input type="text" name=var8 id="inp8" value="{{ request.form['var8'] }}">
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="left" style="width: 70%;margin: 20px auto; background-color:rgb(230, 137, 230) ; ">
+            <h3 style="text-align: center;">Predicted Future Price</h3>
+            <h3>Oil_price is : <span
+                    style="border-radius: 20px; background-color: azure; padding: 0px 6px;">{{parm}}</span></h3>
+        </div>
+        <div class="centered">
+
+            {{modelplot}}
+            
+        </div>
+    </div>
+
+</body>
+
+</html>

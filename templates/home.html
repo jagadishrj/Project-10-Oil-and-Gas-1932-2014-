@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        body {
+            background-color: skyblue;
+        }
+
+        .split {
+            height: 100%;
+            width: 50%;
+            position: fixed;
+            z-index: 1;
+            top: 0px;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        /* Control the left side */
+        .left {
+            left: 0;
+            background-color: rgb(113, 194, 241);
+        }
+
+        /* Control the right side */
+        .right {
+            right: 0;
+            background-color: rgb(230, 137, 230);
+        }
+
+        /* If you want the content centered horizontally and vertically */
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        /* Style the image inside the centered container, if needed */
+        .centered img {
+            width: 400px;
+            height: 300px;
+            border-radius: 30%;
+        }
+        .btn{
+            border: 2px solid green;
+            font-size: large;
+            color: black;
+            text-emphasis: none;
+            border-radius: 30px;
+            padding: 10px;
+            background-color: blueviolet;
+            text-decoration: none;
+            
+        }
+    </style>
+    <title>Showcase</title>
+</head>
+
+<body>
+
+    <div class="split left">
+        <div class="left" style="width: 70%;margin: 20px auto;  ">
+
+        </div>
+        <div class="centered">
+            <!-- image -->
+            <img
+                src="https://www.simplilearn.com/ice9/free_resources_article_thumb/Five-Important-Steps-to-Upskilling-Your-Project-Management-Teams.jpg">
+            <div class="card-body">
+                <h2 >Used Cases</h2>
+                <p >Used case of LSTM and Linear model for a quick review on models.</p>
+                <a href="/showcase" class="btn" >VIEW MY MODEL</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="split right">
+        <div class="left" style="width: 70%;margin: 20px auto; background-color:rgb(230, 137, 230) ; ">
+
+        </div>
+        <div class="centered">
+            <!-- image -->
+            <img src="http://bsmedia.business-standard.com/_media/bs/img/article/2018-03/04/full/1520186343-4814.jpg">
+            <div class="card-body">
+                <h2>Predict Using LSTM</h2>
+                <p>Productive Case for LSTM to predict the Oil value of 2016 giving the oil value of 2015</p>
+                <a href="/lstm" class="btn" >USE LSTM</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
