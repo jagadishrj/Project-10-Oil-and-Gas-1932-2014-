@@ -13,10 +13,10 @@ The Global dataset of oil and natural gas production, prices, exports, and net e
 ## Content  
 Oil production and prices data are for 1932-2014 (2014 data are incomplete); gas production and prices are for 1955-2014; export and net export data are for 1986-2013. Country codes have been modified from earlier versions to conform to Correlates of War (COW) and Quality of Government (QOG) standards
 
-## Algorithms Used
+# Algorithms Used
 AR,ARIMA,VARMA,VARMAX,LSTM(Deep learning)
 
-## Algorithms Deployed
+# Algorithms Deployed
 Linear and Lstm
 
 ## Tools and Technique
