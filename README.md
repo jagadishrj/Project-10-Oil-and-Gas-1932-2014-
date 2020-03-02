@@ -20,3 +20,5 @@ Linear and Lstm
 Language:-       PYTHON 3.6.5  
 Deployment Tool:-Flask  
 For Hosting:-    Heroku
+
+Heroku link:- http://jagadishrj.herokuapp.com
